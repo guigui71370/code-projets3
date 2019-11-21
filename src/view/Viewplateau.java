@@ -1,10 +1,9 @@
-import java.awt.BorderLayout;
+package view;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +11,7 @@ import javax.swing.JPanel;
 
 import javax.swing.JLabel;
 
-@SuppressWarnings({ "serial", "unused" })
+
 public class Viewplateau extends JFrame  {
 
 	private JP3 tab[][]=new JP3[17][17];
@@ -148,9 +147,7 @@ public class Viewplateau extends JFrame  {
 		
 		
 		
-		/*contentlisteaction.setVisible(true); 
-		contentplateau.setVisible(true);
-		content.setVisible(true);*/
+
 		setVisible(true);
 		
 		

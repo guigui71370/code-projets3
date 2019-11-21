@@ -1,3 +1,5 @@
+package model;
+
 public class Case {
 	
 	// ---------------------- ATTRIBUTS ---------------------
@@ -25,7 +27,7 @@ public class Case {
 	// ---------------- METHODES / FONCTIONS ----------------
 	@Override
 	public String toString() {
-		return "Case [posx=" + posx + ", posy=" + posy + "]";
+		return "model.Case [posx=" + posx + ", posy=" + posy + "]";
 	}
 	
 	public void resetDistance (Case[][] tab) {

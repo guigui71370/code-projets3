@@ -1,7 +1,9 @@
+import view.Viewplateau;
+
 public class Main {
 	public static void main(String[] args) {
-		Partie test =new Partie();
-		test.jouer();
+		///model.Partie test =new model.Partie();
+		Viewplateau view=new Viewplateau();
 
 		
 	}

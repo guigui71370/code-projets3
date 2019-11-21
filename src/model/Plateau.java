@@ -1,3 +1,8 @@
+package model;
+
+import view.JP3;
+import view.Viewplateau;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +19,7 @@ public class Plateau {
 	private boolean mur=false;
 	
 	private ArrayList<Case> voisin =new ArrayList<Case>();
-	private Case[][] tabCases = new Case [17][17];
+	private Case[][] tabCases = new Case[17][17];
 	private Pion p1;
 	private Pion p2;
 	private Viewplateau tab;
@@ -532,59 +537,59 @@ public class Plateau {
 		return -1;
 	}
 
-	public ArrayList<Case> estvoisin(int posx,int posy) {
+	public ArrayList<Case> estvoisin(int posx, int posy) {
 	   	 // Renvoie la liste des voisins accessibles depuis la case dont les positions sont en entrée
 	   	 
 	   	 ArrayList<Case> courant = new ArrayList<Case>();
 	   	 
-	   	 if (posy<=14 && this.tabCases[posx][posy+1].estOccupee() == false) {    						 // S'il n'est pas sur un bord et pas de mur qui bloque
-	   		 if (this.tabCases[posx][posy+2].estOccupee() == false) {   								 // Si la case est libre
+	   	 if (posy<=14 && !this.tabCases[posx][posy + 1].estOccupee()) {    						 // S'il n'est pas sur un bord et pas de mur qui bloque
+	   		 if (!this.tabCases[posx][posy + 2].estOccupee()) {   								 // Si la case est libre
 	   			 courant.add(this.tabCases[posx][posy+2]); }    									// On l'ajoute
 	   		 else {    													 // Si la case est occupée par le pion adverse
-	   			 if (posy<=12 && this.tabCases[posx][posy+4].estOccupee() == false && this.tabCases[posx][posy+3].estOccupee() == false) courant.add(this.tabCases[posx][posy+4]);  
+	   			 if (posy<=12 && !this.tabCases[posx][posy + 4].estOccupee() && !this.tabCases[posx][posy + 3].estOccupee()) courant.add(this.tabCases[posx][posy+4]);
 	   			 else {
-	   				 if (posx<=14 && this.tabCases[posx+1][posy+2].estOccupee() == false) {   							 // S'il n'y a pas de mur à droite du pion adverse
+	   				 if (posx<=14 && !this.tabCases[posx + 1][posy + 2].estOccupee()) {   							 // S'il n'y a pas de mur à droite du pion adverse
 	   					 courant.add(this.tabCases[posx+2][posy+2]); }   												 // On ajoute case à droite de l'adversaire
-	   				 if (posx>=2 && this.tabCases[posx-1][posy+2].estOccupee() == false) {   								 // S'il n'y a pas de mur à gauche de l'adversaire
+	   				 if (posx>=2 && !this.tabCases[posx - 1][posy + 2].estOccupee()) {   								 // S'il n'y a pas de mur à gauche de l'adversaire
 	   					 courant.add(this.tabCases[posx-2][posy+2]); }   												 // On ajoute la case à gauche de l'adversaire
 	   				 }
 	   		 }
 	   	 }
-	   	 if (posy>=2 && this.tabCases[posx][posy-1].estOccupee() == false) {// en bas
-	   		 if (this.tabCases[posx][posy-2].estOccupee() == false) {
+	   	 if (posy>=2 && !this.tabCases[posx][posy - 1].estOccupee()) {// en bas
+	   		 if (!this.tabCases[posx][posy - 2].estOccupee()) {
 	   			 courant.add(this.tabCases[posx][posy-2]); }
 	   		 else {
-	   			 if (posy>=4 && this.tabCases[posx][posy-4].estOccupee() == false && this.tabCases[posx][posy-3].estOccupee() == false) courant.add(this.tabCases[posx][posy-4]);
+	   			 if (posy>=4 && !this.tabCases[posx][posy - 4].estOccupee() && !this.tabCases[posx][posy - 3].estOccupee()) courant.add(this.tabCases[posx][posy-4]);
 	   			 else {
-	   				 if (posx<=14 && this.tabCases[posx+1][posy-2].estOccupee() == false) {
+	   				 if (posx<=14 && !this.tabCases[posx + 1][posy - 2].estOccupee()) {
 	   					 courant.add(this.tabCases[posx+2][posy-2]); }
-	   				 if (posx>=2 && this.tabCases[posx-1][posy-2].estOccupee() == false) {
+	   				 if (posx>=2 && !this.tabCases[posx - 1][posy - 2].estOccupee()) {
 	   					 courant.add(this.tabCases[posx-2][posy-2]); }
 	   				 }
 	   		 }
 	   	 }
-	   	 if (posx<=14 && this.tabCases[posx+1][posy].estOccupee() == false) {// a droite
-	   		 if (this.tabCases[posx+2][posy].estOccupee() == false) {
+	   	 if (posx<=14 && !this.tabCases[posx + 1][posy].estOccupee()) {// a droite
+	   		 if (!this.tabCases[posx + 2][posy].estOccupee()) {
 	   			 courant.add(this.tabCases[posx+2][posy]); }
 	   		 else {
-	   			 if (posx<=12 && this.tabCases[posx+4][posy].estOccupee() == false && this.tabCases[posx+3][posy].estOccupee() == false) courant.add(this.tabCases[posx+4][posy]);
+	   			 if (posx<=12 && !this.tabCases[posx + 4][posy].estOccupee() && !this.tabCases[posx + 3][posy].estOccupee()) courant.add(this.tabCases[posx+4][posy]);
 	   			 else {
-	   				 if (posy >= 2 && this.tabCases[posx+2][posy-1].estOccupee() == false) {
+	   				 if (posy >= 2 && !this.tabCases[posx + 2][posy - 1].estOccupee()) {
 	   					 courant.add(this.tabCases[posx+2][posy-2]); }
-	   				 if (posy <= 14 && this.tabCases[posx+2][posy+1].estOccupee() == false) {
+	   				 if (posy <= 14 && !this.tabCases[posx + 2][posy + 1].estOccupee()) {
 	   					 courant.add(this.tabCases[posx+2][posy+2]); }
 	   				 }
 	   		 }
 	   	 }
-	   	 if (posx>=2 && this.tabCases[posx-1][posy].estOccupee() == false) { // a gauche
-	   		 if (this.tabCases[posx-2][posy].estOccupee() == false) {
+	   	 if (posx>=2 && !this.tabCases[posx - 1][posy].estOccupee()) { // a gauche
+	   		 if (!this.tabCases[posx - 2][posy].estOccupee()) {
 	   			 courant.add(this.tabCases[posx-2][posy]); }
 	   		 else {
-	   			 if (posx>=4 && this.tabCases[posx-4][posy].estOccupee() == false && this.tabCases[posx-3][posy].estOccupee() == false) courant.add(this.tabCases[posx-4][posy]);
+	   			 if (posx>=4 && !this.tabCases[posx - 4][posy].estOccupee() && !this.tabCases[posx - 3][posy].estOccupee()) courant.add(this.tabCases[posx-4][posy]);
 	   			 else {
-	   				 if (posy>=2 && this.tabCases[posx-2][posy-1].estOccupee() == false) {
+	   				 if (posy>=2 && !this.tabCases[posx - 2][posy - 1].estOccupee()) {
 	   					 courant.add(this.tabCases[posx-2][posy-2]); }
-	   				 if (posy<=14 && this.tabCases[posx-2][posy+1].estOccupee() == false) {
+	   				 if (posy<=14 && !this.tabCases[posx - 2][posy + 1].estOccupee()) {
 	   					 courant.add(this.tabCases[posx-2][posy+2]); }
 	   				 }
 	   			 }
