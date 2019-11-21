@@ -1,4 +1,4 @@
-package model;
+package org.openjfx.model;
 
 import java.util.ArrayList;
 public class Pion {

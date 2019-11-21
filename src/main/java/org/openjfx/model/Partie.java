@@ -1,4 +1,4 @@
-package model;
+package org.openjfx.model;
 
 public class Partie {
 	

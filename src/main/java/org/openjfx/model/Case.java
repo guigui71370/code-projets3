@@ -1,4 +1,4 @@
-package model;
+package org.openjfx.model;
 
 public class Case {
 	
@@ -27,7 +27,7 @@ public class Case {
 	// ---------------- METHODES / FONCTIONS ----------------
 	@Override
 	public String toString() {
-		return "model.Case [posx=" + posx + ", posy=" + posy + "]";
+		return "org.openjfx.model.Case [posx=" + posx + ", posy=" + posy + "]";
 	}
 	
 	public void resetDistance (Case[][] tab) {

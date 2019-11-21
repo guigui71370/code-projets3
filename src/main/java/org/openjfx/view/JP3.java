@@ -1,4 +1,4 @@
-package view;
+package org.openjfx.view;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
