@@ -74,6 +74,8 @@ public class Case {
 		this.gagnantNoir = gagnantNoir;
 	}
 
+	public int[] getCoordone(){return new int[]{posx,posy};}
+
 	public int getPosx() {
 		return posx;
 	}
