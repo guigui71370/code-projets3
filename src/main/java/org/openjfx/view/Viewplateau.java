@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 
 public class Viewplateau extends JFrame {
 
-    private JP3 tab[][] = new JP3[17][17];
+    private JP3[][] tab = new JP3[17][17];
     private JButton dep;
     private JButton mur;
     private JLabel j1;
